@@ -16,9 +16,39 @@ header {
 }
 
 nav {
-    text-align: center;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content in desktop */
+    align-items: center; /* Center vertically */
     background-color: #444;
     padding: 10px;
+    position: relative; /* Allows for absolute positioning of the hamburger */
+}
+
+.hamburger {
+    position: absolute; /* Position hamburger icon */
+    left: 10px; /* Adjust distance from left */
+    display: none; /* Hide by default for desktop */
+}
+
+.hamburger .bar {
+    width: 25px; /* Width of each bar */
+    height: 3px; /* Height of each bar */
+    background-color: #fff; /* Color of the bars */
+    margin: 4px 0; /* Space between bars */
+    transition: 0.3s; /* Smooth transition */
+}
+
+.nav-list {
+    display: flex; /* Horizontal layout */
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove margin */
+    justify-content: center; /* Center the nav items */
+}
+
+.nav-list li {
+    display: inline; /* Horizontal list items */
+    margin: 0 15px;
 }
 
 nav ul {
@@ -40,6 +70,35 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline; /* Underline on hover */
     background-color: rgba(255, 255, 255, 0.2); /* Slight background change */
+}
+
+@media (max-width: 600px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    .nav-list {
+        display: none; /* Hide nav list by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width */
+        background-color: #444; /* Background color */
+        position: absolute; /* Positioning */
+        top: 20px; /* Adjust this value to set distance from the navbar */
+        left: 0;
+        padding: 0; /* Remove padding */
+        z-index: 1; /* Ensure it overlaps */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .nav-list li {
+        width: 100%; /* Make each item take full width */
+        text-align: center; /* Center text within each item */
+        margin: 10px 0; /* Add some vertical spacing */
+    }
+
+    .nav-list.active {
+        display: flex; /* Show when active */
+    }
 }
 
 section {
