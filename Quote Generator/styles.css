@@ -1,0 +1,105 @@
+/* General page styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif; /* Default system font */
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite; /* Animated gradient */
+    overflow: hidden;
+}
+
+/* Keyframes for background animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container for mobile-first */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.25); /* Lighter background */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+h1 {
+    color: #fff;
+    font-size: 1.8rem; /* Consistent size */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for text */
+}
+
+.quote-box {
+    margin: 20px 0; /* More space around the quote box */
+    padding: 20px; /* Increased padding */
+    background: rgba(255, 255, 255, 0.15); /* Slightly darker background */
+    border-radius: 8px; /* Round corners */
+    border-left: 4px solid #00bcd4; /* Stylish border on the left */
+}
+
+#quote {
+    font-size: 1.5rem;
+    color: #fff;
+    font-style: italic;
+    line-height: 1.5; /* Better spacing */
+}
+
+#author {
+    font-size: 1.2rem;
+    color: #fff; /* White color */
+    margin-top: 8px;
+    font-weight: bold; /* Keep the bold styling */
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #00bcd4); /* Gradient background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; /* Add transform transition */
+}
+
+button:hover {
+    background-color: rgba(0, 123, 255, 1);
+    transform: scale(1.05); /* Slight grow effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+/* Medium and larger screens */
+@media (min-width: 481px) {
+    .container {
+        padding: 30px;
+        max-width: 450px;
+        border-radius: 15px;
+        backdrop-filter: blur(12px);
+    }
+
+    h1 {
+        font-size: 2rem; /* Larger font size */
+    }
+
+    #quote {
+        font-size: 1.8rem; /* Increased font-size for readability */
+    }
+
+    #author {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 15px 30px; /* Slightly larger buttons */
+        font-size: 1.1rem;
+    }
+}
