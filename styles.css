@@ -17,7 +17,7 @@ header {
 
 nav {
     display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content in desktop */
+    justify-content: space-between; /* Space between nav items */
     align-items: center; /* Center vertically */
     background-color: #444;
     padding: 10px;
@@ -28,6 +28,7 @@ nav {
     position: absolute; /* Position hamburger icon */
     left: 10px; /* Adjust distance from left */
     display: none; /* Hide by default for desktop */
+    cursor: pointer; /* Pointer cursor for click */
 }
 
 .hamburger .bar {
@@ -43,7 +44,6 @@ nav {
     list-style: none;
     padding: 0;
     margin: 0; /* Remove margin */
-    justify-content: center; /* Center the nav items */
 }
 
 .nav-list li {
@@ -72,7 +72,7 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Slight background change */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1440px) {
     .hamburger {
         display: flex; /* Show hamburger on mobile */
     }
@@ -134,107 +134,100 @@ footer {
     width: 100%;
 }
 
-@media (max-width: 600px) {
-    nav ul li {
-        display: block; /* Stack navigation items vertically */
-        margin: 10px 0; /* Adjust margin */
-    }
-
-    section {
-        margin: 20px; /* Adjust margins for smaller screens */
-    }
-}
-
-#contact ul {
-    display: flex; /* Flexbox for horizontal alignment */
-    list-style-type: none; /* Removes bullet points */
-    padding: 0; /* Removes padding */
-}
-
-#contact ul li {
-    margin: 0 10px; /* Adds spacing between icons */
-}
-
-#contact a {
-    color: black; /* Default icon color for all icons */
-    font-size: 24px; /* Size of the icons */
-    text-decoration: none; /* Removes underline */
-    transition: color 0.3s; /* Smooth color change */
-}
-
-#contact a:hover {
-    color: #0056b3; /* Color change on hover */
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    position: relative; /* To allow absolute positioning of the image */
-}
-
-.profile-pic {
-    width: 150px; /* Set a fixed width for the image */
-    height: 150px; /* Set a fixed height for the image */
-    border-radius: 50%; /* Makes the image circular */
-    position: absolute; /* Allows you to position it relative to the header */
-    top: 50%; /* Center vertically */
-    right: 20px; /* Adjust this value to set distance from the right edge */
-    transform: translateY(-50%); /* Center the image vertically */
-    border: 2px solid #fff; /* Optional: white border around the image */
-}
-
-/* Media Query for Mobile Responsiveness */
-@media (max-width: 600px) {
-    .profile-pic {
-        width: 80px; /* Smaller size on mobile */
-        height: 80px; /* Smaller size on mobile */
-        right: 10px; /* Adjust position on mobile */
-    }
-}
-
-
 .project-container {
     display: flex; /* Use flexbox for horizontal layout */
-    justify-content: space-between; /* Space between project items */
-    margin-top: 20px; /* Add margin above the project section */
+    justify-content: space-between; /* Space between
+    /* Space between project items */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .project {
-    flex: 1; /* Each project takes equal space */
-    margin: 0 10px; /* Spacing between rectangles */
-    padding: 20px; /* Padding inside the rectangles */
-    background-color: #eaeaea; /* Background color for the rectangles */
+    background-color: #f9f9f9; /* Light background for projects */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Center the text */
-    transition: box-shadow 0.3s, transform 0.3s; /* Smooth transition */
-}
-
-.project:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
-    transform: translateY(-3px); /* Slight lift effect without scaling */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 10px; /* Margin around each project */
+    flex: 1 1 300px; /* Responsive sizing */
+    max-width: 45%; /* Maximum width of each project */
+    display: flex; /* Use flexbox for inner content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align items */
+    padding: 20px; /* Padding inside the project box */
 }
 
 .project-image {
-    width: 40%; /* Set a larger width for the images */
+    max-width: 100%; /* Responsive image size */
     height: auto; /* Maintain aspect ratio */
-    margin: 10px 0; /* Space above and below the image */
+    border-radius: 5px; /* Slight rounding on images */
+    margin-bottom: 10px; /* Space below images */
 }
 
-
 .view-button {
-    display: inline-block; /* Makes the button inline with padding */
-    margin-top: 10px; /* Space above the button */
-    padding: 10px 15px; /* Padding inside the button */
-    background-color: #007BFF; /* Button background color */
-    color: white; /* Button text color */
+    display: inline-block; /* Button display */
+    padding: 10px 20px; /* Button padding */
+    background-color: #333; /* Button background */
+    color: white; /* Text color */
     text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners for the button */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth color change on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .view-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #555; /* Darker on hover */
+}
+
+#contact ul {
+    list-style: none; /* Remove list style */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flex layout for icons */
+    justify-content: center; /* Center the icons */
+}
+
+#contact ul li {
+    margin: 0 10px; /* Space between icons */
+    font-size: 24px; /* Increase font size for larger icons */
+}
+
+
+footer {
+    margin-top: 20px; /* Space above footer */
+    padding: 20px; /* Padding inside footer */
+}
+
+footer p {
+    margin: 0; /* Remove margin */
+}
+
+.profile-pic {
+    border-radius: 50%; /* Circular profile picture */
+    width: 150px; /* Set a fixed size */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Smaller heading on mobile */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller subheading */
+    }
+
+    .nav-list {
+        flex-direction: column; /* Stack nav items on mobile */
+    }
+
+    .project-container {
+        flex-direction: column; /* Stack projects vertically on mobile */
+        align-items: center; /* Center items */
+    }
+
+    .project {
+        max-width: 90%; /* Allow for more space on mobile */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
 }
