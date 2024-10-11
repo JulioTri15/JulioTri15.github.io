@@ -10,18 +10,50 @@ body {
 
 .calculator {
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 4px solid black; /* Thick black border for the calculator */
     border-radius: 10px;
     padding: 30px;
-    width: 400px;
+    width: 90%; /* Set to 90% for smaller screens */
+    max-width: 400px; /* Maximum width on smaller screens */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative; /* Make it a positioned container */
 }
 
+.theme-toggle {
+    position: absolute; /* Position the button absolutely */
+    top: -10px; /* Distance from the top */
+    right: -10px; /* Distance from the right */
+}
+
+.theme-toggle button {
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 20px; /* Size of the icon */
+    color: #000; /* Default color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+body.dark-theme .theme-toggle button {
+    color: #fff; /* Change icon color in dark theme */
+    background-color: transparent; /* Ensure background is transparent in dark mode */
+}
+
+/* Ensure the toggle button remains transparent in all states */
+.theme-toggle button:hover,
+.theme-toggle button:focus,
+body.dark-theme .theme-toggle button:hover,
+body.dark-theme .theme-toggle button:focus,
+body.dark-theme .theme-toggle button:active {
+    background-color: transparent; /* Keep background transparent */
+}
+
+/* Display styles */
 .display {
     background-color: #f3f3f3;
     padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 4px solid black; /* Thick black border for the display */
     border-radius: 5px;
 }
 
@@ -33,6 +65,7 @@ body {
     border: none;
     background-color: transparent;
     text-align: right;
+    color: black; /* Set text color to black */
 }
 
 .buttons {
@@ -46,21 +79,19 @@ button {
     font-size: 20px;
     text-align: center;
     cursor: pointer;
-    border: none;
+    border: 2px solid black; /* Thick black border for buttons */
     background-color: #fff;
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: #e0e0e0;
-}
-
+/* Equal button styling */
 .equal-button {
     grid-column: span 1;
     background-color: #fff;
     color: #000;
 }
 
+/* Zero button styling */
 .zero-button {
     grid-column: span 1;
     padding: 20px;
@@ -72,6 +103,75 @@ button:hover {
     background-color: #fff;
 }
 
-.operator:hover {
-    background-color: #e0e0e0;
+/* Hover effect for buttons */
+.operator:hover,
+button:hover {
+    background-color: transparent; /* Transparent background */
+    transform: scale(1.05); /* Scale up */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #222; /* Dark background */
+}
+
+body.dark-theme .calculator {
+    background-color: #333; /* Dark calculator background */
+    border: 4px solid black; /* Keep thick black border in dark mode */
+}
+
+body.dark-theme .display {
+    background-color: #444; /* Dark display background */
+    border: 4px solid black; /* Keep thick black border in dark mode */
+}
+
+body.dark-theme button {
+    background-color: #555; /* Dark buttons */
+    color: #fff; /* White text */
+}
+
+/* Remove hover effect in dark theme for toggle button */
+body.dark-theme .theme-toggle button:hover,
+body.dark-theme .theme-toggle button:focus {
+    background-color: transparent; /* Keep background transparent */
+    color: #fff; /* Keep icon color white */
+}
+
+/* Remove hover effect in dark theme */
+body.dark-theme button:hover {
+    background-color: #666; /* Slightly lighter dark */
+    transform: scale(1.05); /* Scale up */
+}
+
+/* Display styles */
+.display {
+    background-color: #00ab00; /* Background color for the LCD */
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 4px solid black; /* Thick black border for the display */
+    border-radius: 5px;
+}
+
+/* Dark theme display styles */
+body.dark-theme .display {
+    background-color: #00ab00; /* Keep the same background color in dark mode */
+    border: 4px solid black; /* Thick black border in dark mode */
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+    .calculator {
+        width: 70%; /* Wider calculator on larger screens */
+        max-width: 600px; /* Maximum width for desktop */
+    }
+
+    #display {
+        font-size: 36px; /* Larger font size for display on larger screens */
+    }
+
+    button {
+        font-size: 24px; /* Larger button text on larger screens */
+        padding: 25px; /* More padding for larger buttons */
+    }
 }
