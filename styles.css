@@ -29,6 +29,7 @@ nav {
     left: 10px; /* Adjust distance from left */
     display: none; /* Hide by default for desktop */
     cursor: pointer; /* Pointer cursor for click */
+    color: white;
 }
 
 .hamburger .bar {
@@ -175,6 +176,43 @@ footer {
     background-color: #555; /* Darker on hover */
 }
 
+
+.skills-container {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center the divs horizontally */
+    gap: 20px; /* Add space between Front end and Back end sections */
+}
+
+.front-end,
+.back-end {
+    text-align: center; /* Center text within each section */
+}
+
+.skill-card {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#contact {
+    text-align: center; /* Center all text in the contact section */
+}
+
+#contact p {
+    margin: 10px 0; /* Add some margin between paragraphs */
+}
+
+
+
+
+
 #contact ul {
     list-style: none; /* Remove list style */
     padding: 0; /* Remove padding */
@@ -230,4 +268,4 @@ footer p {
     .hamburger {
         display: flex; /* Show hamburger icon */
     }
-}
+} 

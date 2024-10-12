@@ -34,11 +34,30 @@ function toggleTheme() {
   }
 }
 
-// Load theme on page load
+// Load theme on page load and check for adaptive mode
 window.onload = () => {
   const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-      document.body.classList.add('dark-theme'); // Apply dark theme
-      document.getElementById('icon').className = 'fa fa-moon'; // Set icon to moon
+  
+  if (savedTheme) {
+      // Apply saved theme
+      if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+          document.getElementById('icon').className = 'fa fa-moon';
+      } else {
+          document.body.classList.remove('dark-theme');
+          document.getElementById('icon').className = 'fa fa-sun';
+      }
+  } else {
+      // Adaptive background based on the current time
+      const currentHour = new Date().getHours();
+      if (currentHour >= 6 && currentHour < 18) {
+          // Daytime: Light theme
+          document.body.classList.remove('dark-theme');
+          document.getElementById('icon').className = 'fa fa-sun';
+      } else {
+          // Nighttime: Dark theme
+          document.body.classList.add('dark-theme');
+          document.getElementById('icon').className = 'fa fa-moon';
+      }
   }
 };
