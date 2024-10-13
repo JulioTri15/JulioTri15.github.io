@@ -174,4 +174,23 @@ body.dark-theme .display {
         font-size: 24px; /* Larger button text on larger screens */
         padding: 25px; /* More padding for larger buttons */
     }
-}
+} 
+
+/* Responsive styles for smaller screens */
+@media (max-width: 480px) {
+    .calculator {
+        width: 70%; /* Set to 70% for smaller screens */
+        max-width: 320px; /* Maximum width for mobile */
+    }
+
+    #display {
+        font-size: 24px; /* Smaller font size for display on mobile screens */
+    }
+
+    button {
+        font-size: 18px; /* Smaller button text on mobile screens */
+        padding: 15px; /* Less padding for smaller buttons */
+    }
+} 
+
+
