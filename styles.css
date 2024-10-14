@@ -17,6 +17,39 @@ header {
     background-color: #333;
     color: #fff;
 }
+h2 {
+    margin-bottom: 0; /* Remove default margin below h2 */
+}
+
+
+/* Style for the typewriter effect */
+#typewriter {
+    margin-top: 0; /* Remove default margin above h3 */
+    display: inline-block; /* Make the element inline to adjust width dynamically */
+    overflow: hidden; /* Ensures text is hidden when animated */
+    white-space: nowrap; /* Prevents text from wrapping */
+    border-right: 3px solid black; /* Cursor effect */
+    font-size: 24px; /* Adjust the font size */
+    text-align: center; /* Center align text */
+    animation: blinkCursor 0.8s step-end infinite; /* Blinking cursor effect */  
+    height: 30px; /* Set a fixed height for the element */
+    line-height: 30px; /* Center the text vertically within the element */
+
+}
+
+/* Blinking cursor animation */
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #typewriter {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}
 
 
 
