@@ -44,15 +44,6 @@ h2 {
     }
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    #typewriter {
-        font-size: 18px; /* Adjust font size for smaller screens */
-    }
-}
-
-
-
 nav {
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center the navigation */
@@ -137,6 +128,17 @@ nav ul li a:hover {
 
     .nav-list.active {
         display: flex; /* Show when active */
+    }  
+
+    nav {
+        position: fixed; /* Make the navbar fixed */
+        top: 0; /* Align it to the top of the screen */
+        width: 100%; /* Full width to cover the screen */
+        z-index: 1000; /* High z-index to stay on top of other elements */
+    }
+
+    .hero {
+        margin-top: 20px; /* Adjust to prevent content from being hidden behind the navbar */
     }
 }
 
@@ -261,6 +263,16 @@ footer {
     }
     .wrapper {
         padding: 20px;
+    }  
+    nav {
+        position: fixed; /* Make the navbar fixed */
+        top: 0; /* Align it to the top of the screen */
+        width: 100%; /* Full width to cover the screen */
+        z-index: 1000; /* High z-index to stay on top of other elements */
+    }
+
+    .hero {
+        margin-top: 20px; /* Adjust to prevent content from being hidden behind the navbar */
     }
 }
 
@@ -308,8 +320,32 @@ footer p {
     object-fit: cover; /* Maintain aspect ratio */
 }
 
-/* Media Queries for Responsive Design */
+/* Media Queries for Responsive Design for max-width 768px */
 @media (max-width: 768px) {
+
+    #typewriter {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }  
+
+    nav {
+        position: fixed; /* Make the navbar fixed */
+        top: 0; /* Align it to the top of the screen */
+        width: 100%; /* Full width */
+        z-index: 1000; /* Ensure it stays on top */
+    }
+
+    .hero {
+        margin-top: 20px; /* Adjust this value to account for the fixed navbar height */
+    }
+    
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+
+    .nav-list {
+        flex-direction: column; /* Stack nav items on mobile */
+    }
+
     h1 {
         font-size: 2rem; /* Smaller heading on mobile */
     }
@@ -318,10 +354,7 @@ footer p {
         font-size: 1.5rem; /* Smaller subheading */
     }
 
-    .nav-list {
-        flex-direction: column; /* Stack nav items on mobile */
-    }
-
+  
     .project-container {
         flex-direction: column; /* Stack projects vertically on mobile */
         align-items: center; /* Center items */
@@ -331,7 +364,4 @@ footer p {
         max-width: 90%; /* Allow for more space on mobile */
     }
 
-    .hamburger {
-        display: flex; /* Show hamburger icon */
-    }
 } 
